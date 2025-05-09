@@ -1,0 +1,92 @@
+
+
+/* #####################  Hover EFFECTS ############################# */
+
+
+li{
+    list-style: none;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.instagram{
+    border: 2px solid #ff0095;
+    color: #c72b7e;
+}
+
+.twitter{
+    border: 2px solid #1c9ff1;
+    color: #1c9ff1;
+}
+
+.youtube{
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+
+.facebook{
+    border: 2px solid #0679e6;
+    color: #0679e6;
+}
+
+
+/* #####################  Hover EFFECTS ############################# */
+
+.icon{
+    transition: 0.6s;
+}
+
+li:hover .icon1{
+    transform: rotateY(360deg);
+    text-shadow: 0px 0px 1px #ff0095;
+}
+
+li:hover .icon2{
+    transform: rotateY(360deg);
+    text-shadow: 0px 0px 1px #1c9ff1;
+}
+
+li:hover .icon3{
+    transform: rotateY(360deg);
+    text-shadow: 0px 0px 1px #ff0000;
+}
+
+li:hover .icon4{
+    transform: rotateY(360deg);
+    text-shadow: 0px 0px 1px #0679e6;
+}
+
+li{
+    transition: 0.4s;
+    transition-delay: 0.2s;
+}
+
+.instagram:hover{
+    box-shadow: 0px 0px 7px #ff0095 inset,
+                0px 0px 7px #ff0095;
+}
+
+.twitter:hover{
+    box-shadow: 0px 0px 7px #1c9ff1 inset,
+                0px 0px 7px #1c9ff1;
+}
+
+.youtube:hover{
+    box-shadow: 0px 0px 7px #ff0000 inset,
+                0px 0px 7px #ff0000;
+}
+
+.facebook:hover{
+    box-shadow: 0px 0px 7px #0679e6 inset,
+                0px 0px 7px #0679e6;
+}
+
+.img{
+    box-shadow: 1px 1px 20px ye;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZTR COMPANY</title>
+    <script defer src="../../../script.js"></script>
+    <script defer src="../../../matomo.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/ztrlogo.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 3830px;
+            background: #121212;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .header {
+            background: linear-gradient(90deg, #5500ff, #ff0099);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 80%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff0099, #5500ff);
+            transform: translateX(-50%);
+            border-radius: 50px;
+        }
+
+        .logo {
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+        }
+
+        .logo img {
+            width: 50px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .subtitulo {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .info-box strong {
+            font-size: 14px;
+            display: block;
+        }
+
+        .info-hint {
+            background: rgba(61, 3, 73, 0.644);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .info-hint strong {
+            font-size: 14px;
+            display: block;
+        }
+
+        .descricao {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Estilização do botão */
+        .botao {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #5500ff, #ff0099);
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: linear-gradient(90deg, #ff0099, #5500ff);
+            transform: scale(1.05);
+        }
+        /* Estilo do Hint */
+        .hint {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="ztrcompany.png" alt="ZTR Logo">
+            </div>
+            <h1>ZTR COMPANY</h1>
+            <p class="subtitulo">Perfil</p>
+        </div>
+
+        <div class="content">
+            <div class="info-hint">
+                <strong>Criada em:</strong> Out 25, 2023
+            </div>
+            <div class="info-box">
+                <strong>Presidente:</strong> Julio Cesar
+            </div>
+            <div class="info-box">
+                <strong>Vice-Presidente:</strong> Crystiane Jurye
+            </div>
+
+            <h2>Descrição</h2>
+            <p class="descricao">
+                <p>A ZTR Company é uma empresa focada no desenvolvimento de tecnologia e entretenimento, especializada na criação de jogos, sites e softwares. Responsável por toda a estrutura digital e inovação, a ZTR Company busca entregar experiências imersivas e funcionais, combinando criatividade e tecnologia.</p>
+                <p>-----------------------------------------</p>
+                A ZTR COMPANY é uma empresa indie de criação de jogos com sede em Joinville/SC, conduzida por um único criador apaixonado por Astronomia. Cada jogo é uma obra autoral, desenvolvida com dedicação para crianças proporcionando a melhor experiência e jogabilidade.
+                <p>-----------------------------------------</p>
+                Com total liberdade criativa, a ZTR COMPANY explora novas ideias, sempre focada em entregar jogos que traga uma educação, tanto em mecânicas quanto em design visual. Cada projeto carrega a essência criativa, levando-a para jogadores ao redor do mundo.
+            </p>
+                        <!-- Botão para a hierarquia -->
+                        <a href="../../../studios.html" class="botao">Voltar</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</body>
+</html>

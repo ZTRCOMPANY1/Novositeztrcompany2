@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Em Breve | Página em Construção</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #0f0f1a;
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+    
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      padding: 2rem;
+      z-index: 10;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(45deg, #ff5e5e, #fbff00, #0bff99, #00a2ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradient-shift 8s ease infinite;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      color: #ccc;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 0.5s;
+    }
+    
+    .message {
+      font-size: 1.2rem;
+      color: #aaa;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 1s;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(45deg, #ff5e5e, #ff8700);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards 1.5s;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 94, 94, 0.4);
+    }
+    
+    .btn:active {
+      transform: translateY(-1px);
+    }
+    
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+    
+    .btn:hover::after {
+      transform: translateX(100%);
+    }
+    
+    .construction-site {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+    }
+    
+    .rocket {
+      position: absolute;
+      width: 60px;
+      height: 140px;
+      bottom: 30%;
+      left: 30%;
+      animation: rocketHover 3s ease-in-out infinite;
+      transform-style: preserve-3d;
+      z-index: 5;
+    }
+    
+    .rocket-body {
+      position: absolute;
+      width: 40px;
+      height: 100px;
+      bottom: 0;
+      left: 10px;
+      background: linear-gradient(90deg, #ff5e5e, #ff8a00);
+      border-radius: 20px 20px 10px 10px;
+    }
+    
+    .rocket-head {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      bottom: 100px;
+      left: 10px;
+      background-color: #ddd;
+      border-radius: 20px 20px 0 0;
+    }
+    
+    .window {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      bottom: 70px;
+      left: 20px;
+      background-color: #00a2ff;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+    
+    .fin {
+      position: absolute;
+      width: 15px;
+      height: 30px;
+      bottom: 10px;
+      background-color: #ddd;
+      border-radius: 0 0 5px 5px;
+    }
+    
+    .fin.left {
+      left: -5px;
+      transform: skewX(-20deg);
+    }
+    
+    .fin.right {
+      right: -5px;
+      transform: skewX(20deg);
+    }
+    
+    .flame {
+      position: absolute;
+      bottom: -20px;
+      left: 15px;
+      width: 30px;
+      height: 40px;
+      background: linear-gradient(to bottom, #ff9500, #ff5e5e);
+      border-radius: 0 0 15px 15px;
+      animation: flameFlicker 0.2s ease-in-out infinite alternate;
+    }
+    
+    .laptop {
+      position: absolute;
+      width: 100px;
+      height: 60px;
+      right: 30%;
+      bottom: 35%;
+      transform-style: preserve-3d;
+      transform: rotateX(20deg) rotateZ(-15deg);
+      animation: laptopType 1s ease-in-out infinite;
+    }
+    
+    .laptop-base {
+      position: absolute;
+      width: 100px;
+      height: 60px;
+      background-color: #333;
+      border-radius: 5px;
+    }
+    
+    .laptop-screen {
+      position: absolute;
+      width: 90px;
+      height: 55px;
+      top: 2.5px;
+      left: 5px;
+      background-color: #00a2ff;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    
+    .code {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .code::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        transparent,
+        transparent 5px,
+        rgba(255, 255, 255, 0.1) 5px,
+        rgba(255, 255, 255, 0.1) 10px
+      );
+      animation: scrollCode 3s linear infinite;
+    }
+    
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: white;
+      border-radius: 50%;
+      animation: twinkle 4s infinite;
+    }
+    
+    .shooting-star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      pointer-events: none;
+      opacity: 0;
+      z-index: 0;
+    }
+    
+    .shooting-star::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(to left, white, transparent);
+      transform: translateX(-100%) translateY(1px);
+    }
+    
+    .progress-container {
+      width: 300px;
+      height: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin: 0 auto 30px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 2s;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0bff99, #00a2ff);
+      border-radius: 10px;
+      transition: width 1s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      animation: progressGlow 1.5s ease-in-out infinite;
+    }
+    
+    .counter {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: #ccc;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 2s;
+    }
+    
+    @keyframes rocketHover {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    @keyframes flameFlicker {
+      0% {
+        height: 30px;
+        opacity: 0.8;
+      }
+      100% {
+        height: 40px;
+        opacity: 1;
+      }
+    }
+    
+    @keyframes laptopType {
+      0%, 100% {
+        transform: rotateX(20deg) rotateZ(-15deg);
+      }
+      50% {
+        transform: rotateX(22deg) rotateZ(-15deg);
+      }
+    }
+    
+    @keyframes scrollCode {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(50px);
+      }
+    }
+    
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+    
+    @keyframes gradient-shift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    @keyframes progressGlow {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    
+    /* Efeito 3D na inicialização */
+    .container {
+      animation: containerIntro 1.5s ease-out forwards;
+      opacity: 0;
+      transform: translateZ(-100px);
+    }
+    
+    @keyframes containerIntro {
+      0% {
+        opacity: 0;
+        transform: translateZ(-100px) rotateX(10deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateZ(0) rotateX(0deg);
+      }
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .message {
+        font-size: 1rem;
+      }
+      
+      .progress-container {
+        width: 80%;
+      }
+      
+      .rocket {
+        transform: scale(0.8);
+        left: 20%;
+      }
+      
+      .laptop {
+        transform: scale(0.8) rotateX(20deg) rotateZ(-15deg);
+        right: 20%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  
+  <div class="container">
+    <h1>Em Breve Aparecerá Aqui</h1>
+    <p class="subtitle">Estamos construindo algo incrível!</p>
+    
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="counter" id="counter">Concluído: 0%</div>
+    
+    <p class="message">Esta página ainda está em desenvolvimento. Nossa equipe está trabalhando duro para trazer a você uma experiência excepcional em breve.</p>
+    
+    <a href="/" class="btn">Voltar para a Página Inicial</a>
+  </div>
+  
+  <div class="construction-site">
+    <div class="rocket">
+      <div class="rocket-body"></div>
+      <div class="rocket-head"></div>
+      <div class="window"></div>
+      <div class="fin left"></div>
+      <div class="fin right"></div>
+      <div class="flame"></div>
+    </div>
+    
+    <div class="laptop">
+      <div class="laptop-base"></div>
+      <div class="laptop-screen">
+        <div class="code"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Criar estrelas
+    const starsContainer = document.getElementById('stars');
+    const numStars = 200;
+    
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      
+      // Posição aleatória
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      
+      // Tamanho aleatório
+      const size = Math.random() * 3;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      
+      // Atraso na animação
+      star.style.animationDelay = `${Math.random() * 4}s`;
+      
+      starsContainer.appendChild(star);
+    }
+    
+    // Criar estrelas cadentes
+    function createShootingStar() {
+      const shootingStar = document.createElement('div');
+      shootingStar.classList.add('shooting-star');
+      
+      // Posição inicial (topo da tela)
+      const startX = Math.random() * window.innerWidth;
+      shootingStar.style.left = `${startX}px`;
+      shootingStar.style.top = `${Math.random() * (window.innerHeight / 3)}px`;
+      
+      // Definir animação
+      shootingStar.style.animation = `shootingStar ${Math.random() * 2 + 1}s linear forwards`;
+      
+      // Adicionar keyframes dinamicamente
+      const style = document.createElement('style');
+      const endX = startX + (Math.random() * window.innerWidth / 2);
+      const endY = window.innerHeight * (0.5 + Math.random() * 0.5);
+      
+      style.innerHTML = `
+        @keyframes shootingStar {
+          0% {
+            transform: translate(0, 0) rotate(45deg);
+            opacity: 1;
+          }
+          80% {
+            opacity: 1;
+          }
+          100% {
+            transform: translate(${endX - startX}px, ${endY}px) rotate(45deg);
+            opacity: 0;
+          }
+        }
+      `;
+      
+      document.head.appendChild(style);
+      document.body.appendChild(shootingStar);
+      
+      // Remover após animação
+      setTimeout(() => {
+        shootingStar.remove();
+        style.remove();
+      }, 3000);
+    }
+    
+    // Criar estrelas cadentes periodicamente
+    setInterval(createShootingStar, 3000);
+    
+    // Animação da barra de progresso
+    const progressBar = document.getElementById('progress-bar');
+    const counter = document.getElementById('counter');
+    let progress = 0;
+    const intervalId = setInterval(() => {
+      // Cálculo mais realista com velocidade variável
+      const increment = Math.random() * 2;
+      progress += increment;
+      
+      if (progress >= 100) {
+        progress = 0;
+        // Reiniciar quando chegar a 100%
+      }
+      
+      progressBar.style.width = `${progress}%`;
+      counter.textContent = `Concluído: ${Math.floor(progress)}%`;
+    }, 800);
+    
+    // Efeito 3D de parallax ao mover o mouse
+    document.addEventListener('mousemove', (e) => {
+      const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+      const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+      
+      const container = document.querySelector('.container');
+      container.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      
+      const rocket = document.querySelector('.rocket');
+      rocket.style.transform = `translateY(${yAxis}px) translateX(${xAxis}px) rotateY(${xAxis/2}deg)`;
+      
+      const laptop = document.querySelector('.laptop');
+      laptop.style.transform = `rotateX(${20 + yAxis/5}deg) rotateZ(${-15 + xAxis/5}deg)`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilização da tela cheia */
+body {
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Fundo animado */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Conteúdo central */
+.content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgb(0, 0, 0);
+    display: inline-block;
+    animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out 1.5s forwards;
+}
+
+/* Botão estilizado */
+.botao {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #ff8c00;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.botao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.5), transparent);
+    transition: 0.4s;
+}
+
+.botao:hover::before {
+    left: 100%;
+}
+
+.botao:hover {
+    background-color: #ff4500;
+}
+
+/* Animações */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

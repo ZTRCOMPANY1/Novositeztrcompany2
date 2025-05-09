@@ -1,0 +1,25 @@
+/*.css geral*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+
+.btn {
+    background-color: #00aaff;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 90px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #0088cc;
+    text-align: center;
+}
+
+.a1{
+    text-decoration: none; /* Remove o sublinhado */
+}

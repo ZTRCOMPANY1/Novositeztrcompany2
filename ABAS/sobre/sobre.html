@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <link rel="stylesheet" href="sobre.css">
+    <link rel="stylesheet" href="sobre2.css">
+    <script defer src="../../script.js"></script>
+    <script defer src="../../../matomo.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/ztrlogo.png">
+</head>
+<body>
+
+    <div class="update-container">
+        <a href="../../index.html" class="botao-download">
+            <span>Voltar</span>
+        </a>
+
+        <div class="banner">
+            <img id="banner-img" src="ztr.png" alt="Banner da Atualização">
+        </div>
+
+        <div class="content">
+            <h1 id="titulo">Sobre Nós</h1>
+            <p id="descricao">A ZTR COMPANY é uma empresa indie de criação de jogos com sede em Joinville/SC, conduzida por um único criador apaixonado por Astronomia. Cada jogo é uma obra autoral, desenvolvida com dedicação para crianças proporcionando a melhor experiência e jogabilidade.
+
+                Com total liberdade criativa, a ZTR COMPANY explora novas ideias, sempre focada em entregar jogos que traga uma educação, tanto em mecânicas quanto em design visual. Cada projeto carrega a essência criativa, levando-a para jogadores ao redor do mundo.</p>
+            <p>----------------------------------------</p>
+            <p>A ZTR Company é uma empresa focada no desenvolvimento de tecnologia e entretenimento, especializada na criação de jogos, sites e softwares. Responsável por toda a estrutura digital e inovação, a ZTR Company busca entregar experiências imersivas e funcionais, combinando criatividade e tecnologia.</p>
+            <a href="sobre/sobreztr.html" class="esconder">
+                <span>🛠 Sobre</span>
+            </a>
+
+
+            
+            <div class="esconder"id="midia-container">
+                <video controls width="600">
+                    <source src="midia/video.mp4" type="video/mp4">
+                </video>
+                
+                <audio controls>
+                    <source src="midia/audio.mp3" type="audio/mpeg">
+                </audio>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const titulo = params.get("titulo");
+            const descricao = params.get("descricao");
+            const banner = params.get("banner");
+            const midia = params.get("midia") ? params.get("midia").split(",") : [];
+
+            if (titulo) document.getElementById("titulo").textContent = titulo;
+            if (descricao) document.getElementById("descricao").textContent = descricao;
+            if (banner) document.getElementById("banner-img").src = banner;
+
+            const midiaContainer = document.getElementById("midia-container");
+            midia.forEach(src => {
+                let element;
+                if (src.endsWith(".mp4")) {
+                    element = document.createElement("video");
+                    element.controls = true;
+                } else {
+                    element = document.createElement("img");
+                }
+                element.src = src;
+                element.classList.add("midia-item");
+                midiaContainer.appendChild(element);
+            });
+        });
+    </script>
+</body>
+</html>

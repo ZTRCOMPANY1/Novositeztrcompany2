@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos - Parkour Space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style1.css">
+    <script defer src="../../../../../script.js"></script>
+    <script defer src="../../../matomo.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/ztrlogo.png">
+</head>
+<body>
+
+<header>Créditos - Parkour Space</header>
+
+<div class="container">
+    <h2 class="section-title">ZTR Company - Desenvolvedora do Jogo</h2>
+    <div class="cards">
+        <div class="card" onclick="showProfile('julio')">
+            <img src="images/julio.png" alt="DJ JULIO BEAT">
+            <h3>DJ JULIO BEAT</h3>
+            <p>Fundador, Desenvolvedor e Designer</p>
+        </div>
+        <div class="card" onclick="showProfile('programador')">
+            <img src="images/programador.jpg" alt="Programador">
+            <h3>João Silva</h3>
+            <p>Programador</p>
+        </div>
+        <div class="card" onclick="showProfile('artista')">
+            <img src="images/artista.jpg" alt="Artista 3D">
+            <h3>Ana Souza</h3>
+            <p>Artista 3D</p>
+        </div>
+        <div class="card" onclick="showProfile('designer')">
+            <img src="images/designer.jpg" alt="Designer">
+            <h3>Lucas Mendes</h3>
+            <p>UI/UX Designer</p>
+        </div>
+        <div class="card" onclick="showProfile('testador')">
+            <img src="images/testador.jpg" alt="Testador">
+            <h3>Mariana Oliveira</h3>
+            <p>Testadora</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">ZTR Studios - Trilha Sonora</h2>
+    <div class="cards">
+        <div class="card" onclick="showProfile('compositor')">
+            <img src="images/compositor.jpg" alt="Compositor">
+            <h3>Carlos Ferreira</h3>
+            <p>Produção Musical</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para exibir o perfil -->
+<div id="profile-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeProfile()">&times;</span>
+        <!-- Banner de perfil -->
+        <img id="profile-banner" class="profile-banner" src="" alt="Banner de Perfil">
+        <div class="profile-info">
+            <!-- Foto de perfil -->
+            <img id="profile-photo" class="profile-photo" src="" alt="Foto de Perfil">
+            
+            <!-- Card redondo de data de entrada -->
+            <div id="entry-card" class="entry-card">
+                <p id="entry-date">Entrou Dia:24/10/2024</p>
+            </div>
+
+            <h2 id="profile-name"></h2>
+            <p id="profile-role"></p>
+            <p id="profile-linhaa"></p>
+            <h2 id="profile-descricaoo"></h2>
+            <p id="profile-description"></p>
+        </div>
+    </div>
+</div>
+
+    <nav class="bottom-nav">
+        <a href="../../ps.html" class="active"><img src="../../pslogo.png" alt="Jogos"></a>
+        </nav>
+
+<div class="footer">
+    <p>&copy; 2025 Parkour Space | ZTR Company & ZTR Studios</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

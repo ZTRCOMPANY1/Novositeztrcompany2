@@ -1,0 +1,234 @@
+/* Reset */
+/* Efeito de transição ao carregar página */
+
+
+
+
+main {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slide-in 0.5s ease-in-out forwards;
+}
+
+
+/* Animação de deslize da esquerda para a direita */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra Superior */
+
+/* Conteúdo Principal */
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+main h2 {
+    margin-bottom: 10px;
+}
+
+/* Barra Inferior */
+.bottom-nav {
+
+    bottom: 0;
+    width: 100%;
+    background-size: 400% 400%;
+    animation: gradientMove 5s infinite alternate;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/* Animação do gradiente */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.bottom-nav a img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Ícones dos botões */
+.bottom-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Animação ao clicar no botão */
+.bottom-nav a:active {
+    transform: scale(1.2);
+}
+
+/* Efeito ao passar o mouse (para desktop) */
+.bottom-nav a:hover {
+    filter: brightness(1.2);
+}
+
+/* Ícone ativo */
+.active {
+    background: linear-gradient(135deg, #0059ff, #ff00ff);
+    animation: pulse 1.5s infinite alternate;
+}
+
+
+/* Pulso suave no botão ativo */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Ícones dentro dos botões */
+.bottom-nav a img {
+    width: 40px;
+    height: 40px;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+
+.card {
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px auto;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Banner menor */
+.banner-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.banner-container img {
+    width: 80%;
+    max-width: 230px;
+    border-radius: 15px;
+}
+
+/* Botão de créditos */
+.botao-creditos {
+    display: block;
+    background: #0d10ad;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 200px;
+    margin: 15px auto;
+    transition: 0.3s;
+}
+
+.botao-creditos:hover {
+    background: #8a2be2;
+    transform: scale(1.05);
+}
+
+/* Informações do Projeto */
+.info-projeto {
+    border: 2px solid #0d10ad;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    background: rgba(37, 13, 173, 0.1);
+}
+
+.info-projeto legend {
+    font-weight: bold;
+    color: #0d10ad;
+}
+
+.info-projeto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-projeto li {
+    padding: 5px 0;
+}
+
+/* Descrição do Projeto */
+.descricao {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.descricao h3 {
+    color: #0d10ad;
+    font-size: 1.9em;
+    margin-bottom: 10px;
+}
+
+.descricao h1 {
+    color: #0d10ad;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+

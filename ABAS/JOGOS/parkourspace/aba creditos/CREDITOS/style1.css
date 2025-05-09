@@ -1,0 +1,122 @@
+/* Reset */
+/* Efeito de transição ao carregar página */
+
+
+/* Animação de deslize da esquerda para a direita */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Barra Inferior */
+.bottom-nav {
+
+    bottom: 0;
+    width: 100%;
+    background-size: 400% 400%;
+    animation: gradientMove 5s infinite alternate;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/* Animação do gradiente */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.bottom-nav a img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Ícones dos botões */
+.bottom-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Animação ao clicar no botão */
+.bottom-nav a:active {
+    transform: scale(1.2);
+}
+
+/* Efeito ao passar o mouse (para desktop) */
+.bottom-nav a:hover {
+    filter: brightness(1.2);
+}
+
+/* Ícone ativo */
+.active {
+    background: linear-gradient(135deg, #0059ff, #ff00ff);
+    animation: pulse 1.5s infinite alternate;
+}
+
+
+/* Pulso suave no botão ativo */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Ícones dentro dos botões */
+.bottom-nav a img {
+    width: 40px;
+    height: 40px;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: #003580;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: #007bff;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
