@@ -1,29 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads - ZTR Company</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZTR COMPANY - Downloads</title>
+    <link rel="stylesheet" href="download.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="card.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="matomo.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="img/ztrlogo.png" />
 </head>
 <body>
     <header>
-        <h1>Downloads</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="jogos.html">Jogos</a></li>
-                <li><a href="noticias.html">Notícias</a></li>
-                <li><a href="loja.html">Loja</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo">ZTR COMPANY</div>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="downloads.html" class="active">Downloads</a></li>
+                    <li><a href="studios.html">Studios</a></li>
+                    <li><a href="suporte.html">Suporte</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h2>Baixe nossos jogos e atualizações</h2>
-        <button onclick="baixarArquivo()">Baixar Agora</button>
+    <main class="downloads-section">
+        <div class="downloads-container">
+            <h2 class="section-title2">Downloads Disponíveis</h2>
+
+            <div class="download-card">
+                <div class="download-info">
+                    <h3 class="download-title">App Oficial ZTR COMPANY (Android)</h3>
+                    <p class="download-description">Baixe a última versão do nosso app oficial para ficar por dentro de todas as novidades e jogos.</p>
+                    <p class="download-size">Tamanho: 8 MB</p>
+                </div>
+                <a href="assets/arquivos baixar/ZTRCOMPANYapp.apk" download class="download-btn">
+                    <i class="fa-solid fa-download"></i> Baixar APK
+                </a>
+            </div>
+
+            <div class="download-card">
+                <div class="download-info">
+                    <h3 class="download-title">ZTR COMPANY LAUNCHER</h3>
+                    <p class="download-description">launcher Oficial da ZTR COMPANY.</p>
+                    <p class="download-size">Formato: Instalador .exe | 86 MB</p>
+                </div>
+                <a href="assets/arquivos baixar/ZTR-Launcher-Setup.exe" download class="download-btn">
+                    <i class="fa-solid fa-file"></i> Baixar Launcher
+                </a>
+            </div>
+
+            <div class="download-card">
+                <div class="download-info">
+                    <h3 class="download-title">Jogo Parkour Space</h3>
+                    <p class="download-description">Download Oficial da Ultima versão do Parkour Space.</p>
+                    <p class="download-size">Formato: Instalador .exe | ? MB</p>
+                </div>
+                <a href="" download class="download-btn">
+                    <i class="fa-solid fa-music"></i> EM BREVE
+                </a>
+            </div>
+        </div>
     </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Corporativo</h3>
+                <ul class="footer-links">
+                    <li><a href="ABAS/sobre/sobre.html">Sobre Nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Jogos</h3>
+                <ul class="footer-links">
+                    <li><a href="ABAS/JOGOS/parkourspace/ps.html">Parkour Space</a></li>
+                    <li><a href="#">Astronomia o Jogo</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Suporte</h3>
+                <ul class="footer-links">
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="ABAS/FAQ/faq.html">Atendimento (em tempo real)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="ABAS/legal/servico/servico.html">Termos de Serviço</a></li>
+                    <li><a href="ABAS/legal/privacidade/privacidade.html">Política de Privacidade</a></li>
+                    <li><a href="ABAS/legal/cookies/cookies.html">Política de Cookies</a></li>
+                    <li><a href="ABAS/legal/info/info.html">Informações Legais</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span class="age-rating">18+</span>
+            <p>© 2025 ZTR COMPANY. Todos os direitos reservados. Todas as marcas são propriedade de seus respectivos donos.</p>
+        </div>
+    </footer>
 </body>
 </html>

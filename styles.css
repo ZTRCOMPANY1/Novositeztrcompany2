@@ -694,3 +694,76 @@ ull {
 .welcome-card.active {
   animation: fadeIn 0.5s ease-out;
 }
+
+
+.downloads-section {
+    padding: 100px 20px 80px;
+    background-color: #111;
+    min-height: 80vh;
+}
+
+.downloads-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.download-card {
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: background-color 0.3s;
+}
+
+.download-card:hover {
+    background-color: #333;
+}
+
+.download-info {
+    max-width: 70%;
+}
+
+.download-title {
+    color: #fcaf17;
+    font-size: 22px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.download-description {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #ddd;
+}
+
+.download-size {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.download-btn {
+    background-color: #fcaf17;
+    color: #000;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #fff;
+}
+
+.download-btn i {
+    font-size: 18px;
+}
