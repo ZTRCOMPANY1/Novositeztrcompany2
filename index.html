@@ -165,5 +165,22 @@
             <p>© 2025 ZTR COMPANY. Todos os direitos reservados. Todas as marcas são propriedade de seus respectivos donos.</p>
         </div>
     </footer>
+
+
+<script>
+fetch("https://rastreador-rkro.onrender.com", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    site: "site-do-github",
+    pagina: window.location.pathname,
+    navegador: navigator.userAgent,
+    idioma: navigator.language,
+    resolucao: `${screen.width}x${screen.height}`,
+    referer: document.referrer || "acesso direto"
+  })
+});
+</script>
+
 </body>
 </html>
