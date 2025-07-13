@@ -53,5 +53,28 @@
         <a href="../../../index.html" class="botao-creditos">
             <span>Voltar</span>
         </a>
+
+<script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.35/dist/ua-parser.min.js"></script>
+<script>
+  const parser = new UAParser();
+  const navegadorInfo = parser.getBrowser();
+  const device = parser.getDevice();
+  const sistema = parser.getOS();
+
+  fetch("https://rastreador-rkro.onrender.com/rastrear", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      site: "site-do-github",                 // personalize com o nome do seu site
+      pagina: window.location.pathname,
+      navegador: `${navegadorInfo.name || "desconhecido"} ${navegadorInfo.version || ""}`.trim(),
+      sistema: `${sistema.name || "desconhecido"} ${sistema.version || ""}`.trim(),
+      dispositivo: device.type || "desktop",  // mobile, tablet, console, desktop
+      idioma: navigator.language || "desconhecido",
+      resolucao: `${screen.width}x${screen.height}`,
+      referer: document.referrer || "direto"
+    })
+  });
+</script>
 </body>
 </html>
