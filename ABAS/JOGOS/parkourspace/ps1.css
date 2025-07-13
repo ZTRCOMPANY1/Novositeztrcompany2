@@ -168,6 +168,27 @@ nav ul li a:hover, nav ul li a.active {
     border-radius: 15px;
 }
 
+/* Botão de GDD */
+.botao-gdd {
+    display: block;
+    background: #0d10ad;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 210px;
+    margin: 15px auto;
+    transition: 0.3s;
+}
+
+.botao-gdd:hover {
+    background: #8a2be2;
+    transform: scale(1.05);
+}
+
+
 /* Botão de créditos */
 .botao-creditos {
     display: block;
