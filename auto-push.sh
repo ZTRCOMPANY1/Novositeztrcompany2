@@ -12,5 +12,5 @@ do
     echo "Push feito com sucesso!"
   fi
 
-  sleep 3
+  sleep 30
 done
