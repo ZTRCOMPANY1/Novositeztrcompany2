@@ -1,212 +1,312 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZTR COMPANY</title>
-    <script defer src="../../../script.js"></script>
-    <script defer src="../../../matomo.js"></script>
-    <link rel="icon" type="image/x-icon" href="img/ztrlogo.png">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #000;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+<title>ZTR COMPANY</title>
 
-        .container {
-            width: 3830px;
-            background: #121212;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-        }
+<script defer src="../../../script.js"></script>
+<script defer src="../../../matomo.js"></script>
 
-        .header {
-            background: linear-gradient(90deg, #5500ff, #ff0099);
-            padding: 40px;
-            text-align: center;
-            position: relative;
-        }
+<link rel="icon" href="../../../img/ztrlogo.png">
 
-        .header::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 80%;
-            height: 5px;
-            background: linear-gradient(90deg, #ff0099, #5500ff);
-            transform: translateX(-50%);
-            border-radius: 50px;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-        .logo {
-            background: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 10px;
-        }
+:root{
+  --bg:#050505;
+  --card:#0c0c0c;
+  --card-soft:#111;
+  --line:#1f1f1f;
+  --text:#ffffff;
+  --muted:#9a9a9a;
+}
 
-        .logo img {
-            width: 50px;
-        }
+*{box-sizing:border-box}
 
-        h1 {
-            font-size: 20px;
-            margin: 0;
-        }
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(180deg,#000,#050505);
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:40px 20px;
+}
 
-        .subtitulo {
-            font-size: 14px;
-            opacity: 0.7;
-        }
+/* CONTAINER */
 
-        .content {
-            padding: 20px;
-        }
+.container{
+  width:100%;
+  max-width:900px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,0.8);
+}
 
-        .info-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+/* HEADER */
 
-        .info-box strong {
-            font-size: 14px;
-            display: block;
-        }
+.header{
+  padding:50px 25px 35px;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+}
 
-        .info-hint {
-            background: rgba(61, 3, 73, 0.644);
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+.logo{
+  width:80px;
+  height:80px;
+  margin:0 auto 18px;
+  border-radius:18px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-        .info-hint strong {
-            font-size: 14px;
-            display: block;
-        }
+.logo img{
+  width:60px;
+}
 
-        .descricao {
-            font-size: 14px;
-            line-height: 1.5;
-            opacity: 0.9;
-        }
+h1{
+  font-size:38px;
+  margin:0;
+  font-weight:800;
+  letter-spacing:-1px;
+}
 
-        /* Estilização do botão */
-        .botao {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 12px;
-            background: linear-gradient(90deg, #5500ff, #ff0099);
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
+.subtitulo{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--muted);
+}
 
-        .botao:hover {
-            background: linear-gradient(90deg, #ff0099, #5500ff);
-            transform: scale(1.05);
-        }
-        /* Estilo do Hint */
-        .hint {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 5px;
-        }
-    </style>
+/* CONTENT */
+
+.content{
+  padding:30px;
+}
+
+/* INFO */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.info-box{
+  background:var(--card-soft);
+  border:1px solid var(--line);
+  padding:16px;
+  border-radius:14px;
+}
+
+.info-box span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.info-box strong{
+  display:block;
+  margin-top:5px;
+  font-size:15px;
+}
+
+/* SECTION */
+
+.section{
+  background:var(--card-soft);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:18px;
+}
+
+h2{
+  margin:0 0 14px;
+  font-size:22px;
+}
+
+.descricao{
+  color:#cfcfcf;
+  font-size:14.5px;
+  line-height:1.7;
+}
+
+.descricao p{
+  margin-bottom:12px;
+}
+
+/* BUTTON */
+
+.botao{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:14px;
+  margin-top:20px;
+  border:1px solid var(--line);
+  color:#fff;
+  transition:.2s;
+}
+
+.botao:hover{
+  background:#111;
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:15px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:700px){
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:30px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <img src="ztrcompany.png" alt="ZTR Logo">
-            </div>
-            <h1>ZTR COMPANY</h1>
-            <p class="subtitulo">Perfil</p>
-        </div>
+<main class="container">
 
-        <div class="content">
-            <div class="info-hint">
-                <strong>Criada em:</strong> Out 25, 2023
-            </div>
-            <div class="info-box">
-                <strong>Presidente:</strong> Julio Cesar
-            </div>
-            <div class="info-box">
-                <strong>Vice-Presidente:</strong> Crystiane Jurye
-            </div>
+<header class="header">
 
-            <h2>Descrição</h2>
-            <p class="descricao">
-                <p>A ZTR Company é uma empresa focada no desenvolvimento de tecnologia e entretenimento, especializada na criação de jogos, sites e softwares. Responsável por toda a estrutura digital e inovação, a ZTR Company busca entregar experiências imersivas e funcionais, combinando criatividade e tecnologia.</p>
-                <p>-----------------------------------------</p>
-                A ZTR COMPANY é uma empresa indie de criação de jogos com sede em Joinville/SC, conduzida por um único criador apaixonado por Astronomia. Cada jogo é uma obra autoral, desenvolvida com dedicação para crianças proporcionando a melhor experiência e jogabilidade.
-                <p>-----------------------------------------</p>
-                Com total liberdade criativa, a ZTR COMPANY explora novas ideias, sempre focada em entregar jogos que traga uma educação, tanto em mecânicas quanto em design visual. Cada projeto carrega a essência criativa, levando-a para jogadores ao redor do mundo.
-            </p>
-                        <!-- Botão para a hierarquia -->
-                        <a href="../../../studios" class="botao">Voltar</a>
-                    </div>
-                </div>
-        </div>
+  <div class="logo">
+    <img src="ztrcompany.png" alt="ZTR Logo">
+  </div>
+
+  <h1>ZTR COMPANY</h1>
+  <p class="subtitulo">Perfil institucional</p>
+
+</header>
+
+<section class="content">
+
+  <div class="info-grid">
+
+    <div class="info-box">
+      <span>Criada em</span>
+      <strong>25 de outubro de 2023</strong>
     </div>
 
+    <div class="info-box">
+      <span>Presidente</span>
+      <strong>Julio Cesar</strong>
+    </div>
+
+    <div class="info-box">
+      <span>Vice-Presidente</span>
+      <strong>Crystiane Jurye</strong>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <h2>Sobre a empresa</h2>
+
+    <div class="descricao">
+
+      <p>
+        A ZTR Company é uma empresa focada no desenvolvimento de tecnologia e entretenimento,
+        atuando na criação de jogos, sistemas e soluções digitais.
+      </p>
+
+      <p>
+        Responsável pela estrutura e inovação dos seus projetos, a empresa combina
+        criatividade com tecnologia para entregar experiências modernas e funcionais.
+      </p>
+
+      <p>
+        Com sede em Joinville/SC, a ZTR COMPANY opera como uma desenvolvedora independente,
+        com liberdade criativa para explorar novas ideias e desenvolver produtos autorais.
+      </p>
+
+      <p>
+        Cada projeto é construído com foco em qualidade, identidade visual e experiência do usuário,
+        visando alcançar jogadores e usuários em diferentes plataformas.
+      </p>
+
+    </div>
+
+    <a href="../../../studios" class="botao">
+      Voltar para divisões
+    </a>
+
+  </div>
+
+  <p class="footer">
+    ZTR COMPANY © Todos os direitos reservados
+  </p>
+
+</section>
+
+</main>
 
 
-<script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.35/dist/ua-parser.min.js"></script>
-<script>
-  const parser = new UAParser();
-  const navegadorInfo = parser.getBrowser();
-  const device = parser.getDevice();
-  const sistema = parser.getOS();
+  <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.35/dist/ua-parser.min.js"></script>
 
-  fetch("https://rastreador-rkro.onrender.com/rastrear", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      site: "site-do-github",                 // personalize com o nome do seu site
-      pagina: window.location.pathname,
-      navegador: `${navegadorInfo.name || "desconhecido"} ${navegadorInfo.version || ""}`.trim(),
-      sistema: `${sistema.name || "desconhecido"} ${sistema.version || ""}`.trim(),
-      dispositivo: device.type || "desktop",  // mobile, tablet, console, desktop
-      idioma: navigator.language || "desconhecido",
-      resolucao: `${screen.width}x${screen.height}`,
-      referer: document.referrer || "direto"
-    })
-  });
-</script>
+  <script>
+    const parser = new UAParser();
+    const navegadorInfo = parser.getBrowser();
+    const device = parser.getDevice();
+    const sistema = parser.getOS();
+
+    fetch("https://rastreador-rkro.onrender.com/rastrear", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        site: "site-do-github",
+        pagina: window.location.pathname,
+        navegador: `${navegadorInfo.name || "desconhecido"} ${navegadorInfo.version || ""}`.trim(),
+        sistema: `${sistema.name || "desconhecido"} ${sistema.version || ""}`.trim(),
+        dispositivo: device.type || "desktop",
+        idioma: navigator.language || "desconhecido",
+        resolucao: `${screen.width}x${screen.height}`,
+        referer: document.referrer || "direto"
+      })
+    });
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV53WHG9V3"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-HV53WHG9V3");
+  </script>
+
+  <script
+    src="https://ztr-analytics.onrender.com/tracker.js"
+    data-site-id="d5565ddd-113e-463e-8760-e0992b503483"
+    data-api="https://ztr-analytics.onrender.com">
+  </script>
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HV53WHG9V3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HV53WHG9V3');
-</script>
-<script src="https://ztr-analytics.onrender.com/tracker.js" data-site-id="d8027d88-91ca-4392-ab8e-c3dea82b2821" data-api="https://ztr-analytics.onrender.com"></script>
 </body>
 </html>
